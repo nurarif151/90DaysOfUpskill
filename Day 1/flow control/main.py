@@ -1,66 +1,67 @@
 # database untuk menyimpan data
+
 data = []
 
+def creat_data(name, age):
+    data.append({
+        "name" : name,
+        "age" : age
+    })
 
-def create_data(name, age):
-    data.append({"name": name, "age": age})
     print("Data berhasil ditambahkan")
-
 
 def read_data():
     if data:
         for i, d in enumerate(data):
             print(f"Data ke-{i}:", d)
     else:
-        print("Tidak ada data")
-
+        print("Data tidak ada")
 
 def update_data(index, name, age):
     try:
-        data[index].update({"name": name, "age": age})
-        print("Data berhasil diperbaharui")
+        data[index].update({
+            "name" : name,
+            "age" : age
+        })
+        print("data berhasil di update")
     except IndexError:
-        print("Index data tidak ditemukan")
-
+        print("Maaf data pada index yang anda masukkan tidak ada")
 
 def delete_data(index):
     try:
-        data.pop(index)
-        print("Data berhasil dihapus")
+        date.pop(index)
+        print("data berhasil dihapus")
     except IndexError:
         print("Index data tidak ditemukan")
 
-
 def main():
     while True:
-        print("\n--- CRUD Data ---")
-        print("1. Tambah data")
-        print("2. Tampilkan data")
-        print("3. Perbaharui data")
-        print("4. Hapus data")
+        print("\n-----Program CRUD Data-----")
+        print("1. Tambah Data")
+        print("2. Update Data")
+        print("3. Tampilkan Data")
+        print("4. Delete Data")
         print("5. Keluar")
 
-        choice = int(input("Pilih menu (1-5): "))
+        pilihan = int(input("pilij menu 1 - 5 yang anda perlukan : "))
 
-        if choice == 1:
-            name = input("Masukkan nama: ")
-            age = int(input("Masukkan usia: "))
-            create_data(name, age)
-        elif choice == 2:
+        if pilihan == 1:
+            name = input("Masukkan nama : ")
+            age = int(input("Masukkan umur : "))
+            creat_data(name, age)
+        elif pilihan == 3:
             read_data()
-        elif choice == 3:
-            index = int(input("Masukkan index data: "))
-            name = input("Masukkan nama: ")
-            age = int(input("Masukkan usia: "))
+        elif pilihan == 2:
+            index = int(input("Masukkan index data : "))
+            name = input("Masukkan nama : ")
+            age = int(input("Masukkan usia : "))
             update_data(index, name, age)
-        elif choice == 4:
-            index = int(input("Masukkan index data: "))
+        elif pilihan == 4:
+            index = int(input("Masukkan index data : "))
             delete_data(index)
-        elif choice == 5:
+        elif pilihan == 5:
             break
         else:
-            print("Menu tidak ditemukan")
-
-
+            print("Menu yang anda masukkan tidak ditemukan")
 if __name__ == "__main__":
     main()
