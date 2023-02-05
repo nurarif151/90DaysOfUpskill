@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <style>
+      /* Style untuk header */
+      .header {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+      .header h2 {
+        margin: 0;
+      }
+
+      /* Style untuk tabel */
+      .todo-table {
+        width: 100%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+      .todo-table th, .todo-table td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+      }
+
+      /* Style untuk form */
+      .todo-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .todo-input {
+        width: 60%;
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+      }
+      .todo-button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Style tambahan untuk responsivitas */
+      @media (max-width: 800px) {
+        .todo-table {
+          font-size: 0.8em;
+        }
+        .todo-input {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+<body>
+  <div class="header">
+    <h2>Todo List</h2>
+  </div>
+
+  <table class="todo-table">
+        <tr>
+            <td style="border: 1px solid gray; padding: 10px;">
+                <p style="margin-top: 20px;">You have {{ task_count }} tasks.</p>
+            </td>
+            <td style="border: 1px solid gray; padding: 10px;"></td>
+        </tr>
+   <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <form method="post" action="/search" style="display: flex;">
+        <input type="text" name="search_query" placeholder="Search tasks..." style="padding: 10px; font-size: 16px; border-radius: 5px 0 0 5px; border: 1px solid gray;">
+        <input type="submit" value="Go" style="background-color: lightgray; color: white; border: 1px solid gray; border-radius: 0 5px 5px 0; padding: 10px 20px; font-size: 16px;">
+    </form>
+</div>
+
+
+    <tr>
+      <th>Task</th>
+      <th>Action</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+      <td>{{ task[1] }}</td>
+      <td>
+        <form action="/update/{{ task[0] }}" method="post">
+          <input type="text" name="task" class="todo-input" value="{{ task[1] }}">
+          <input type="submit" value="Update" class="todo-button">
+        </form>
+        <form action="/delete/{{ task[0] }}" method="post">
+          <input type="submit" value="Delete" class="todo-button">
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <form class="todo-form" action="/add" method="post">
+    <input type="text" name="task" class="todo-input" placeholder="Add a new task">
+    <input type="submit" value="Add" class="todo-button">
+  </form>
+
+</body>
+
+</html>
