@@ -1,0 +1,26 @@
+/* Define the dominant color */
+:root {
+  --main-color: #3F51B5; /* Indigo */
+}
+
+/* Apply the dominant color to various elements */
+h1, h2, h3, p {
+  color: var(--main-color);
+}
+
+/* Add some styling to the buttons */
+.cta-button {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1em 2em;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Add hover effect to the buttons */
+.cta-button:hover {
+  background-color: #fff;
+  color: var(--main-color);
+  cursor: pointer;
+}
