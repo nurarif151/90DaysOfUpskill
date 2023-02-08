@@ -1,0 +1,195 @@
+/* CSS for JWoodCarv.id Landing Page */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E5E5E5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #336699;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100vh;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px;
+  font-size: 48px;
+}
+
+header p {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 20px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+main h2 {
+  margin: 20px 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+main p {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+main ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main li {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #336699;
+  color: white;
+}
+
+/* CSS for Contact Us section */
+#contact {
+  background-color: #F0F0F0;
+  padding: 50px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#contact form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #3f51b5;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#contact form input[type="text"], #contact form input[type="email"], #contact form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+}
+
+#contact form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  color: #3f51b5;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#contact form input[type="submit"]:hover {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+#contact label,
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #BBBBBB;
+}
+
+#contact input[type="submit"] {
+  background-color: #3399FF;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #2277CC;
+}
+#products li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#products img {
+  width: 200px;
+  height: 300;
+  margin-right: 20px;
+}
+#products li p {
+  margin-top: 10px;
+}
+
+
+footer {
+  background-color: #336699;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
