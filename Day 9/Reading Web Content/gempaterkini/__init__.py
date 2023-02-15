@@ -8,17 +8,44 @@ def ekstraksi_data():
     except Exception:
        return None
 
+    # Mengambil title
+    # if content.status_code == 200:
+    #     soup = BeautifulSoup(content.text, 'html.parser')
+    #     title = soup.find('title')
+    #     print(title.string)
+    #     return title
+
+    # mengambil tanggal
     if content.status_code == 200:
-        print(content.text)
-        return content.text
+        soup = BeautifulSoup(content.text, 'html.parser')
+
+        # tanggal = soup.find('span', {'class': 'waktu'})
+        # waktu = tanggal.text.split(', ')[1]
+        # tanggal = tanggal.text.split(', ')[0]
+
+
+
+        # Kode yang lebih sederhana
+
+        result = soup.find('span', {'class', 'waktu'})
+        result = result.text.split(', ')
+        tanggal = result[0]
+        waktu = result[1]
+
+        hasil = dict()
+        hasil['tanggal'] = tanggal
+        hasil['waktu'] = waktu
+        return hasil
 
 
 
 def tampilkan_data(result):
     if result is None:
         print("Sorry the data could not be displayed")
-    else :
-        print("Ok.... Done. All data is displayed successfully")
+
+    print(f"Tanggal :  {result['tanggal']}")
+    print(f"Waktu :  {result['waktu']}")
+
 
 
 
