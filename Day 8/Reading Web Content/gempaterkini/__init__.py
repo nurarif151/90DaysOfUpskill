@@ -3,23 +3,30 @@ from bs4 import BeautifulSoup
 
 
 def ekstraksi_data():
-
-    soup = BeautifulSoup("<p>Some<b>bad<i>HTML")
-
     try:
-        content = requests.get('https://www.bmkg.go.id/')
+        content = requests.get('https://bmkg.go.id')
     except Exception:
-        return None
+       return None
 
-
-
-    print(content.status_code)
     if content.status_code == 200:
-        soup = BeautifulSoup(content.text, 'html.parser')
-        title = soup.find('title')
-        print(title.string)
+        print(content.text)
+        return content.text
 
 
-if __name__ = '__main__':
-    print('ini adalah package gempa terkini')
-    print('hai')
+
+def tampilkan_data(result):
+    if result is None:
+        print("Sorry the data could not be displayed")
+    else :
+        print("Ok.... Done. All data is displayed successfully")
+
+
+
+
+
+
+
+
+# if __name__ == '__main__':
+#     print('ini adalah package gempa terkini')
+#     print('hai')
